@@ -1126,6 +1126,11 @@ body {
 }
 
 /*Pages*/
+h1.kamote {
+  color: hsl(168deg, 96%, 44%);
+  font-size: 5rem;
+}
+
 .banner {
   padding-top: 6rem;
 }
