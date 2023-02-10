@@ -1,0 +1,125 @@
+.banner{
+    padding-top: 6rem;
+    &_wrapper{
+        .banner_text{
+            text-align: center;
+            margin-top: 3rem;
+            h1{
+              font-size: 4rem;
+              color: $clr-s-dark;
+              span{
+                color: $clr-c-blue;
+              }  
+            }
+            p{
+                font-size: 2rem;
+                text-align: justify;
+                margin: 2rem 0;
+                padding: 0 2rem;
+            }
+        }
+    }
+    @include mediaQuery($break-l){
+        &_wrapper{
+            .banner_text{
+                h1{
+                    font-size: 6rem;
+                }
+                p{
+                    font-size: 3rem;
+                    text-align: center;
+                    padding: 0 28rem;
+                }
+            }
+        }
+    }
+}
+
+.cards{
+    &_wrapper{
+        @include grid (1, 3rem);
+        padding: 4rem 0;
+        margin: 2rem 1rem;
+        .cards_item{
+            background: $clr-light;
+            border-radius: 2.2rem;
+            box-shadow: 0 100px 140px -50px rgb(0 0 0 / 25%), 0 0 20px 0 rgb(0 0 0 / 3%);
+            width: 100%;
+            &:hover{
+                transform: scale(1.01);
+                transition: .3s ease;
+                cursor: pointer;
+            }
+           img{
+            width: 100%;
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 2rem;
+           }
+           .c_text{
+            margin: 0 2.5rem;
+            padding: 4rem 0;
+            h3{
+                font-size: 2rem;
+            }
+            p{
+                font-size: 1.8rem;
+                margin: 2rem 0;
+            }
+            a{
+                color: $clr-gray;
+                font-weight: 500;
+            }
+           }
+        }
+    }
+    @include mediaQuery($break-l){
+        &_wrapper{
+           display: flex;
+           flex-wrap: wrap;
+           padding: 6rem 0;
+           justify-content: center;
+           .cards_item{
+            max-width: 50rem;
+            margin: 2rem 2rem;
+           }
+        }
+    }
+}
+
+.train{
+    &_wrapper{
+        .train_text{
+            text-align: center;
+            h2{
+                font-size: 4rem;
+                max-width: 28rem;
+                text-align: center;
+                margin: 0 auto;
+                color: $clr-s-dark;
+            }
+            a{
+                margin: 2rem 0;
+                &#button2{
+                    font-size: 2rem;
+                    font-weight: 600;
+                    padding: .8rem 3rem;
+                    border-radius: 5rem;
+                }
+                &:hover{
+                    transform: scale(1.05);
+                    transition: .3s ease;
+                }
+            }
+        }
+    }
+    @include mediaQuery ($break-l){
+        &_wrapper{
+            .train_text{
+                h2{
+                    font-size: 6rem;
+                    max-width: 45rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,163 @@
+.header{
+    background: $clr-light;
+    opacity: .95;
+    position: relative;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    &_wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .branding{
+           figure{
+            a{
+              img{
+                width: 10rem;
+              }
+            }
+           }
+        }
+        .header_nav{
+            background: $clr-light;
+            position: absolute;
+            top: 7.2rem; 
+            height: 0rem;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            padding: 0 2rem;
+            transition: .5s ease;
+            &.open{
+                height: 52rem;
+                transition: .5s ease;
+                border-top: .5px solid $clr-gray;
+            }
+            ul{
+              li{
+                margin: 4rem 0;
+                &.active a{
+                    color: $clr-dark;
+                }
+                a{
+                  color: $clr-gray;
+                  font-size: 2rem;
+                  font-weight: 500;
+                  &:hover{
+                    color: $clr-dark;
+                    transition: 1s ease;
+                  }
+                  }
+                }
+              }
+              a{
+                margin: 2rem 0;
+                &#download{
+                    font-size: 2rem;
+                    font-weight: 600;
+                    padding: 1rem 5rem;
+                    width: 100%;
+                    text-align: center;
+                    border-radius: 5rem;
+                    &:hover{
+                        transform: scale(1.05);
+                        transition: .5s ease;
+                    }
+                }
+              }
+        }
+        .toggle_menu {
+            padding: 1.5rem 1rem;
+            background: #eef0f2;
+            border-radius: 5rem;
+            span {
+                width: 2rem;
+                height: 0.2rem;
+                background-color: $clr-gray;
+                display: block;
+                border-radius: 3rem;
+                transition: .5s ease;
+                &:nth-child(2){
+                    margin: 0.3rem 0;
+                }
+            }
+            &.open{
+                span:first-child{
+                   transform: translate(0, 5px) rotate(45deg);
+                   transition: .5s ease;
+                }
+                span:nth-child(2){
+                    opacity: 0;
+                   transition: .5s ease;
+                }
+                span:last-child{
+                    transform: translate(0, -5px) rotate(-45deg); 
+                    transition: .5s ease;
+                }
+        
+            }
+        }
+        .header_nav2{
+            display: none;
+        }
+        .button{
+            display: none;
+        }
+    }
+    @include mediaQuery($break-l){
+        &_wrapper{
+            display: flex;
+            align-items: center !important;
+            .header_nav{
+                display: none;
+            }
+            .header_nav2{
+                display: block;
+                ul{
+                    display: flex;
+                    li{
+                        margin-right: 4rem;
+                        &:hover{
+                            transform: scale(1.07);
+                            transition: .5s ease;
+                        }
+                        a{
+                            color: $clr-gray;
+                            font-size: 2rem;
+                            font-weight: 500;
+                            &:hover{
+                                color: $clr-dark;
+                                transition: 1s ease;
+                            }
+                        }
+                        &.active a{
+                            color: $clr-dark;
+                        }
+                    }
+                }
+            }
+            .button{
+                display: block;
+                a{
+                    &#download{
+                        font-size: 2rem;
+                        font-weight: 700;
+                        padding: 1rem 2.5rem;
+                        text-align: center;
+                        border-radius: 5rem;
+                        &:hover{
+                            transform: scale(1.05);
+                            transition: .5s ease;
+                        }
+                    }
+                }
+            }
+           .toggle_menu{
+            display: none;
+            &.open{
+                display: none;
+            }
+           }
+        }
+    }
+}
